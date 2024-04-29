@@ -51,8 +51,24 @@ ReactJS
 
         NodeJS is used as a development platform and Browsers are used as runtime by the APP.
 
-    
+        creating an application on NodeJS
+            1. md proj
+            2. cd proj
+            3. npm init -y
 
+        'package.json' is the build config file fro NPM.
+
+        'node_modules' is the folder used to houe the dependencies.
+
+        npm i package-name -g
+        npm i package-name
+        npm i
+
+        npm uninstall package-name
+
+        npm start
+        npm run script-name
+        npm test
 
 
 
