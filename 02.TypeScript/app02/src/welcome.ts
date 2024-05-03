@@ -1,5 +1,5 @@
 const greet = function(userName:string,salutation?:string) : string {
-    return "Hello " + (salutation ? salutation : "") + userName;
+    return "Hello " + (salutation ?? "") + userName;
 }
 
 export default greet;
