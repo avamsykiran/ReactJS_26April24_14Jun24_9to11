@@ -16,16 +16,6 @@ ReactJS
         React 18 styling app
         React 18 NeXTjs Playbook 
 
-    TypeScript
-    -------------------------------
-
-        TypeScript is a microsoft product that wraps around JavaScript with
-        an additional support of Types.
-
-        TypeScript = JavaScript + Types.
-
-        .ts is to be transpelled (compiled) into .js using (tsc).
-
     NodeJS
     --------------------------------
 
@@ -69,6 +59,83 @@ ReactJS
         npm start
         npm run script-name
         npm test
+
+    Typescript
+    --------------------------------------------------------------------------------------------
+
+        Typescript = JavaScript + Types
+
+        Lab Setup
+
+            tsc         typescript compiler
+
+            compiling .ts into .js is called transpelling
+
+        Creating a project:
+
+            npm init -y
+            npm i Typescript --save-dev
+
+            npx tsc --init
+
+            npx tsc filename.ts 
+
+        Datatypes
+
+            number
+            string
+            boolean
+            bigint
+            symbol          let empId = new Symbol()        let empId:Symbol = new Symbol();
+            void
+
+        Special Datatypes
+
+            any
+            unknown
+            never
+            undefined
+            null
+
+        Standard tsconfig
+
+            {
+                "compilerOptions": {
+                    "module": "commonjs",
+                    "esModuleInterop": true,
+                    "target": "es6",
+                    "moduleResolution": "node",
+                    "sourceMap": false,
+                    "outDir": "dist"
+                },
+                "lib": ["es2015"]
+            }
+
+        functions
+
+            function funName(param1:type,param2:type) : returntype {
+
+            }
+
+            const funName = function(param1:type,param2:type) : returntype {
+
+            }
+
+            returnType can be any supported data type inc;uding void and never.
+
+            mostly we use void, and void facilitates null value.
+            never doesnt even allow nulls.
+
+            
+        OOP
+
+            interface
+            class
+            aliases
+            enums
+            unions
+
+            
 
 
 
