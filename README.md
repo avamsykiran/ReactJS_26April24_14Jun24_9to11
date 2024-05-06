@@ -121,7 +121,7 @@ ReactJS
 
             }
 
-            returnType can be any supported data type inc;uding void and never.
+            returnType can be any supported data type incuding void and never.
 
             mostly we use void, and void facilitates null value.
             never doesnt even allow nulls.
@@ -135,8 +135,142 @@ ReactJS
             enums
             unions
 
-            
+    React JS Intro
+    --------------------------------------------------------------------
+
+        is a javascript based SPA framework.
+
+        SPA - Single Page Application. is a web application that has only one html page
+        and the entire content of the page is managed and generated on the client machine.
+
+        Static WebSite
+            a folder having pre-written .html documents hosted on a HTTP SERVER.
+
+        Dynamic Web Applications
+
+            Http-Server                                  Client/Browser
+
+                Server Side Programs
+                (servlets/jsp/php/aspx..etc.,)
+                                <----------------REQ---------
+                            generate html dynamically
+                                ------ (generated html) RESP ------>
+                                
+                                <----------------REQ---------
+                            generate html dynamically
+                                ------ (generated html) RESP ------>
 
 
+        Single Page Applications
 
-    
+
+            Http-Server                                  Client/Browser
+
+                spa-bundle
+                (index.html + .js)
+                                <----------------REQ---------
+                                ------ (spa-bundle) RESP ------>    index.html along with the JS will be loaded
+
+                                                                    any form submition or any event or any link
+                                                                    are all handled by the JS on the clietn itself.
+
+                                                                    the JS on the client will generate html dynamically
+                                                                    and will replace the content of the index.html
+                                                                    as and when neeed.
+
+            Application Server
+                
+                rest-api        <--------.json/.xml------------>    spa-bundle will call the rest-api for data operations.
+
+
+        Create React JS Application
+
+            npx create-react-app app-name
+
+        React JS Components
+
+            A component is a reusable isolated unit that forms the html-extension of React.
+
+            html-extension allows us to create our own html elements and attributes.
+
+            The html-element that we create using react is called a Component.
+
+            1. Class Components
+            2. Function Components
+
+            Class Component 
+                is a javascript class that is extended from React.Component class.
+
+                class Dashboard extends React.Component{
+                    constructor(props){
+                        super(props);
+                        this.state = {};
+                    }
+
+                    render(){
+                        return (
+                            /*an html element*/
+                        );
+                    }
+                }
+
+                <Dashboard></Dashboard>
+
+            Function Component
+
+                is a javascript function that accpets the props as a parmeter and returns an html-element.
+
+                const Banner = (props) => (/* html element */ );
+
+                <Banner></Banner>
+
+            JSX - JavsScript eXtended.
+
+                is a amolgamation of javascript + html.
+
+                in other words JSX is javascript embeded with HTML.
+
+                This is deviced to eliminate a lot of boiler plate coding while DOM manipulation is written.
+
+                .js
+
+                    let userName = "Vamsy";
+                    let pObj = document.createElement("p");
+                    pObj.innerText = `Hello ${userName}! How Are You?`;
+                
+                .jsx
+
+                    let userName = "Vamsy";
+                    let pObj = <p>{userName}</p>;
+
+                .js
+
+                    let friends = ['Vamsy','Rahul','Varma','Vijay'];
+                    let frdList = document.createElement("ol");
+                    
+                    for(let f of friends){
+                        let friendItem = document.createElement("li");
+                        friendItem.innerText = f;
+                        frdList.append(friendItem);
+                    }
+
+                .jsx
+
+                    let friends = ['Vamsy','Rahul','Varma','Vijay'];
+                    let frdList = (
+                        <ol>
+                            { friends.map( f => <li>{f}</li> ) }
+                        </ol>
+                    );
+
+                Rules
+
+                    1. "class" attribute is not to be used, instead 'className' is to be used.
+                    2. the html elements must be always written in lower-case 
+                    3. the entire jsx is case-sensitive.
+                    4. the function component or the 'render()' function of a class component can return only one top-most element.
+
+                    const Banner = () => <div></div>; 
+                    const Header = () => ( <header> <section></section> </header>  );
+
+        
