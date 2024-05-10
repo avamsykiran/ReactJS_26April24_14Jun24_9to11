@@ -273,4 +273,44 @@ ReactJS
                     const Banner = () => <div></div>; 
                     const Header = () => ( <header> <section></section> </header>  );
 
+        Class Component
+
+            From React.Component class, 'state','setState()','render()','componentDidMount()','componentDidUpdate()'
+            and a few more life cycle methods are inhereted by a class Component.
+
+            state       is the field of a Class Component tht holds all the data to be managed by that component.
+                        state is continuosly monitored and as and when the state is modified, the 'render()' method is invoekd.
+                        state is immutable, state is only replacable using 'setState()' method.
+
+            render()    is the method that returns the DOM to be displayed by this component.
+                        we developes ovveride the 'render()' method to decide on the DOM.
+
+            setState()  can take a full or partial state and replace the existing state.
+
+        Function Component vs Class Component
+
+            function component has no 'state' or any other life cycle methods as compared to the class Component.
+            And hence, Function Components are also called state-less components.
         
+        'props' is short for properties. 'props' carry data from a parent component to a child component.
+                props can be passed as attributes on to the child component tag from parent component.
+
+    Shadow DOM / Virtual DOM
+
+        is a in-memory copy of DOM managed by the react.
+
+        Any change to the actual DOM will be very costly as it is directly linked with the screen.
+
+        But changes to shadow DOM are much cheaper as it is not going reflect directly on the screen.
+
+        Each time 'state' is modified, the shadow DOM is tweeked accordingly. Once all the changes
+        on the shadom DOM is done, shadow DOM is superimposed on the actual DOM and only the final changes
+        are shipped to the actual DOM.
+
+        An attribute called 'key' is maintaiend on repitative DOM entries, to uniquly
+        identify that DOM entry and mange changes.
+
+        
+                        
+
+            
