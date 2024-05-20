@@ -13,12 +13,32 @@ class Contacts extends Component {
                 { id: 3, fullName: "Suresh", mobile: "9052224754", mailId: "suresh@gmail.com" },
                 { id: 4, fullName: "Ramesh", mobile: "9052224751", mailId: "ramesh@gmail.com" },
                 { id: 5, fullName: "Sagar", mobile: "9052224752", mailId: "sagar@gmail.com" }
-            ]
+            ],
+            nextContactId: 6
         };
     }
 
+    addContact = contact => {
+        this.setState({
+            contacts: [...this.state.contacts, { ...contact, id: this.state.nextContactId }],
+            nextContactId: this.state.nextContactId + 1
+        });
+    };
+
     deleteById = id => {
         this.setState({ contacts: this.state.contacts.filter(c => c.id != id) });
+    };
+
+    markEditable = id => {
+        this.setState({ contacts: this.state.contacts.map(c => c.id != id ? c : { ...c, isEditable: true }) });
+    };
+
+    unmarkEditable = id => {
+        this.setState({ contacts: this.state.contacts.map(c => c.id != id ? c : { ...c, isEditable: undefined }) });
+    };
+
+    updateContact = contact => {
+        this.setState({ contacts: this.state.contacts.map(c => c.id != contact.id ? c : { ...contact, isEditable: undefined }) });
     };
 
     render() {
@@ -31,9 +51,13 @@ class Contacts extends Component {
 
                 <ContactsHeader />
 
-                <ContactForm />
+                <ContactForm saveContact={this.addContact} />
 
-                { contacts.map(c => <ContactRow key={c.id} c={c} deleteById={this.deleteById} /> ) }
+                {contacts.map(c => (
+                    c.isEditable ?
+                        <ContactForm key={c.id} c={c} saveContact={this.updateContact} unmarkEditable={this.unmarkEditable}  /> :
+                        <ContactRow key={c.id} c={c} deleteById={this.deleteById} markEditable={this.markEditable} />
+                ))}
 
             </section>
         );
