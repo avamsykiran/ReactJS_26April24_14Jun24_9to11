@@ -310,6 +310,13 @@ ReactJS
         An attribute called 'key' is maintaiend on repitative DOM entries, to uniquly
         identify that DOM entry and mange changes.
 
+    ReactJS on Typescript
+
+        npm i -g typescript
+
+        npx create-react-app app-name --template typescript
+
+
     
                         
 
