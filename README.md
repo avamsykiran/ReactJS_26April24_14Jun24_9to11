@@ -316,8 +316,57 @@ ReactJS
 
         npx create-react-app app-name --template typescript
 
+    Life Cycle Methods Of A Component
 
-    
-                        
+        constructor()
+            |
+            ↓
+            render()
+                |
+                ↓
+                componentDidMount()     //is used to execute any task after the first rendering..!
+                            
+                            /************************************************/
+                                setState() has to get invoked
+                                either in the componentDidMount()
+                                or due to any event handler
+                            /************************************************/
+                                        |
+                                        ↓
+                                        render()
+                                            |
+                                            ↓
+                                            componentDidUpdate()  //is used to execute any task after every rendering..!
 
             
+    ReactJS Hooks
+
+        Hook is a special function that provides features to a function component.
+
+        useState        will add state feature to a function component.
+
+                        let [getter,setter] = useState(initalValue);
+
+                        let [x,setX] = useState(0);
+
+                        use 'x' to read the value
+                        use 'setX' to change the value
+
+        useEffect       will add life cycle feature to the function component
+
+                        useEffect(callBack)
+
+                            the callBack is executed after every rendering...!
+
+                        useEffect(callBack,[])
+                            the array here indicates dependencies.
+                            and here dependencies are empty.
+                            the callBack is executed only one after first rendering...!
+
+                        useEffect(callBack,[feild1,field2])
+                            the array here indicates dependencies.
+                            and here field1 and field2 are dependencies
+                            the callBack is executed after every rendering... if there a change in value of
+                            field1 or field2.
+
+    
