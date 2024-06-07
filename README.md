@@ -369,4 +369,77 @@ ReactJS
                             the callBack is executed after every rendering... if there a change in value of
                             field1 or field2.
 
-    
+    NextJS
+
+        is a UI framework based on ReactJs.
+
+        Features
+            Routing     is used for navigating from one component to another.
+
+                        file system based routing is provided on top of
+                        server components. These router support layouts,
+                        error rendering, state rendering ..etc like features.
+
+            Rendering   Server Components and Client Component
+
+                        Server components will render on the server side and the 
+                        cached html content is passed to the client.
+
+                        Where as , client components can be re-rendered on the
+                        client as well.
+
+                        Server Components are employed when api-calls or 
+                        authentication  or any other operation that invlove data
+                        privacy or secracy has to be concerned.
+
+                        Cleint Components are engaged where a user - interaction,
+                        life cycle methods of component snd event handling for
+                        a responsive application are needed.
+
+            Data Feateching
+
+                        supports aynsc/awati server component and flexible fetech api
+                        to talk to rest-api and perform data operations
+
+            Styling
+
+                        supports a vriety of styling options that include CSS, TailWind CSS,
+                        CSS-in-JS.
+
+            Optimization
+
+                        All static resources liek images, fonts, and non static resource like
+                        scripts are optimized to improve the rendering time and performence.
+
+            Typescript
+
+                        Supports typescript for a type-safe application building.
+
+        Createing a NextJS application
+
+            npx create-next-app app-name
+
+        hr-app
+            |- public       is used to hold all static files like images, videos ..etc.,
+            |- src
+                |-app                   is refered to the context-root ("/")
+                    |-global.css        is the global style sheet (equivalent to 'index.css' in reactjs)
+                    |-layout.tsx        root-layout. And layout controls the structure of the page
+                    |-page.tsx          provides the content of the page.
+                    |
+                    |-departments       is accessable as /departments
+                    |   |-page.tsx
+                    |
+                    |-employees         is accessable as /employees
+                    |   |-layout.tsx 
+                    |   |-page.tsx
+                    |   |-list          is accessable as /employees/list
+                    |   |   |-page.tsx
+                    |   |-save          is accessable as /employees/save
+                    |   |   |-page.tsx
+                    |
+                    |-projects          is accessable as /projects
+                    |   |-page.tsx    
+                    |
+                    |- lib              put all .ts files holding bussiness logic
+                    |- ui               put all .tsx files for components.
