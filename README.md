@@ -443,3 +443,8 @@ ReactJS
                     |
                     |- lib              put all .ts files holding bussiness logic
                     |- ui               put all .tsx files for components.
+                |-pages
+                    |-api               represents rest-api
+                        |-emps.js       http://localhost:3000/api/emps
+                        |-depts.js      http://localhost:3000/api/depts
+                        |-projs.js      http://localhost:3000/api/projs
